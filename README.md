@@ -13,5 +13,8 @@ The output table, `vanta.dim_customer_integrations`, is meant to be analysis-rea
 4. Finally, the dimension model puts all this data together.
 
 ## Tests
-Each model has a primary key, which is tested to ensure every value is unique and not null. 
+Each model has a primary key, which is tested to ensure every value is unique and not null. These can be seen in the model's .yml file.
+
+## Metadata
+Model descriptions, as well as descriptions for key columns, are also available in the .yml file. 
 
