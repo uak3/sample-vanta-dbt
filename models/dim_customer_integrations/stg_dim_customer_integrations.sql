@@ -5,7 +5,7 @@
 
 {{ config(
     materialized='incremental', 
-    schema = "stg", 
+    schema = "stg", --schema in data warehouse for intermediate tables not meant for consumption
     unique_key = "id"
     ) 
 }}
