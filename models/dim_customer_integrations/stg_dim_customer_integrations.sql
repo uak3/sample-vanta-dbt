@@ -25,8 +25,8 @@ LEFT JOIN prod.customers AS cust --one row per customer with descriptive columns
      ON ci.customer_id = cust.id
 LEFT JOIN prod.integrations AS ig --one row per integration, from https://www.vanta.com/integrations
      ON ci.integration_id = ig.id 
-
 WHERE ci.deleted IS NULL --assuming we have a timestamp value if the record gets deleted
+    
 --incremental model: only load in new customer integrations, i.e. ones created after table was last updated
 {% if is_incremental() %}
      AND ci.created > (SELECT MAX(created) FROM {{ this }})
