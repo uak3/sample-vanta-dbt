@@ -1,0 +1,31 @@
+#YML file will contain metadata for each model and its key columns, plus the tests we want to include in "dbt test"
+
+version: 2
+
+models:
+  - name: stg_dim_customer_integrations
+    description: "Staging table - incrementally adding new, active customer integrations. Also adds customer- and integration-level data"
+    columns:
+      - name: id
+        description: "The primary key for this table, representing the customer integration ID"
+        tests:
+          - unique
+          - not_null
+
+  - name: customer_integration_document_count
+    description: "Counting the number of active documents per integration"
+    columns:
+      - name: integration_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_customer_integrations
+    description: "Final dimension table - one row per active customer integration"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
