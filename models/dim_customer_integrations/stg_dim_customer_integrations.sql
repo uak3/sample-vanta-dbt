@@ -15,6 +15,7 @@ SELECT
   ci.created, 
   ci.customer_id, 
   cust.name AS customer_name, 
+  ci.integration_id,
   ig.name AS integration_name,
   ig.category AS integration_category, 
   ci.integration_method --e.g. API, Vanta-built, etc
