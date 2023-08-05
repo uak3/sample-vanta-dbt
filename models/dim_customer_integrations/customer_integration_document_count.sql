@@ -1,5 +1,6 @@
 --Count number of documents added to each integration. 
 --Ephemeral model, since we probably don't need a table just for this column - can always join onto the final dimension table
+--If this runs slowly, i.e. there are many documents, we could switch to an incremental model
 
 {{ config(
     materialized='ephemeral', 
