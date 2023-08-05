@@ -8,8 +8,8 @@ The output table, `vanta.dim_customer_integrations`, is meant to be analysis-rea
 
 ## Model Overview
 1. Models are built from raw data ingested by our analytics data warehouse.
-2. A staging model removes deleted records and adds descriptive columns to the customer integrations data.
-3. An ephemeral model counts how many active documents each integration has.
+2. A staging model removes deleted records and adds descriptive columns to the customer integrations data. This model is incremental, meaning we don't have to load in every integration every single model run. This reduces run times and compute costs.
+3. An ephemeral model counts how many active documents each integration has. Since it's ephemeral, the model doesn't take up space in our warehouse.
 4. Finally, the dimension model puts all this data together.
 
 ## Tests
