@@ -14,7 +14,8 @@ SELECT
   ci.customer_id, 
   cust.name AS customer_name, 
   ig.name AS integration_name,
-  ig.category AS integration_category 
+  ig.category AS integration_category, 
+  ci.integration_method --e.g. API, Vanta-built, etc
 FROM prod.customer_integrations AS ci 
   --Everything from "prod" would be the untransformed data directly from the product, synced via fivetran
   --customer_integrations would be a table with one row per integration
