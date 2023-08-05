@@ -4,7 +4,7 @@ dbt Pipeline: Customer Integrations
 ## Introduction
 This repository contains a dbt pipeline that creates a dimension table for every active customer integration. Here, I'm using "integration" to mean one of the connected apps Vanta has available (i.e., the ones listed here: https://www.vanta.com/integrations), while a "customer integration" is the specific connection a customer has to one of these integrations. For example, if my company has integrated Vanta with AWS, 1Password, and Box, and another has integrated AWS and Notion, then we have five customer integrations between us. 
 
-The output table, `vanta.dim_customer_integrations`, is meant to be analysis-ready and enable easy insights for data professionals. 
+The output table, `vanta.dim_customer_integrations`, is meant to be analysis-ready and to enable easy insights for data professionals. 
 
 ## Model Overview
 1. Models are built from raw data ingested by our analytics data warehouse.
